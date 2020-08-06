@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86429245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.548, y: 0, z: 0}
+  m_LocalPosition: {x: 0.446, y: 0.136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657050730}
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558836987}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 657050728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.45, y: -0.006, z: 0}
-  m_LocalScale: {x: 0.6426797, y: 0.1680305, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 86429246}
   m_Father: {fileID: 558836988}
@@ -162,7 +162,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a5e25edd38ec5f6459b5bbe0893d0849, type: 3}
+  m_Sprite: {fileID: -1247864665951578133, guid: 4a4cc87c2617c3244a55d24bdcbd603c,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -186,6 +187,7 @@ GameObject:
   - component: {fileID: 664174631}
   - component: {fileID: 664174630}
   - component: {fileID: 664174632}
+  - component: {fileID: 745483448482401302}
   - component: {fileID: 1433983518}
   m_Layer: 0
   m_Name: Player
@@ -298,10 +300,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: e39a921b8fd9e9240a35adfe4ff57e4f, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
@@ -323,6 +325,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   checkGroundPoint: {fileID: 412929755}
+--- !u!114 &745483448482401302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537754313033872031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab443875d3aa0824391889dfa083faf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointPrefab: {fileID: 6773028070622531770, guid: 0c385e3e8dff1c141b17236fa7e18441,
+    type: 3}
+  _health: 100
 --- !u!114 &1433983518
 MonoBehaviour:
   m_ObjectHideFlags: 0

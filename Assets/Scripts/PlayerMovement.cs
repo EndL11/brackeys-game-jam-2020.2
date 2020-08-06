@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private float speed = 6f;
-    private float jumpForce = 20f;
+    private float jumpForce = 25f;
     private float checkRadiusRange = 0.2f;
 
     private void Awake()
@@ -40,17 +40,16 @@ public class PlayerMovement : MonoBehaviour
     {
         float moveTo = Input.GetAxisRaw("Horizontal") * speed;
         rb.velocity = new Vector2(moveTo, rb.velocity.y);
-
-        //if(Input.GetAxisRaw("Horizontal") != 0)
-        //{
-        //    Vector2 newPos = transform.position;
-        //    newPos.x += Input.GetAxisRaw("Horizontal");
-        //    transform.position = Vector2.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
-        //}
     }
 
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(checkGroundPoint.position, checkRadiusRange, whatIsGround);
+    }
+
+    public void RecieveDamageJump()
+    {
+        rb.velocity = Vector2.zero;
+        rb.AddForce(transform.up * 15f, ForceMode2D.Impulse);
     }
 }

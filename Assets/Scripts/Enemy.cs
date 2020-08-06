@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public float _damage = 15f;
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(_damage);
+            collision.gameObject.GetComponent<PlayerMovement>().RecieveDamageJump();
         }
     }
 }

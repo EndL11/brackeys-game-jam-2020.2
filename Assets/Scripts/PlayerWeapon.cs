@@ -20,6 +20,7 @@ public class PlayerWeapon : MonoBehaviour
     void Update()
     {
         RotateToMouse();
+
         if (Input.GetMouseButton(0) && CanShoot())
         {
             Shoot();
@@ -39,6 +40,15 @@ public class PlayerWeapon : MonoBehaviour
 
     private void RotateToMouse()
     {
+        if(Camera.main.ScreenToWorldPoint(Input.mousePosition).x < weaponPoint.position.x)
+        {
+            weaponPoint.GetChild(0).GetComponent<SpriteRenderer>().flipY = true;
+        }
+        else
+        {
+            weaponPoint.GetChild(0).GetComponent<SpriteRenderer>().flipY = false;
+        }
+
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
 
