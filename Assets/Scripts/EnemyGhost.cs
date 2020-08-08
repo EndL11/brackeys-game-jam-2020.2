@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyGhost : MonoBehaviour
 {
+    public GameObject _sprite;
+
     private GameObject player;
     private float speed = 1.7f;
     [SerializeField] private float _damage = 25f;
@@ -22,7 +24,7 @@ public class EnemyGhost : MonoBehaviour
 
     private void FollowPlayer()
     {
-        transform.Rotate(Vector3.forward * 35f * Time.deltaTime);
+        _sprite.GetComponent<SpriteRenderer>().flipX = player.transform.position.x > transform.position.x ? true : false;
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 

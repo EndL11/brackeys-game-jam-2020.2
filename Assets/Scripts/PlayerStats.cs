@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     public GameObject checkPointPrefab;
+    public Slider _healthSlider;
 
     [SerializeField] private float _health = 100f;
     private float _maxHealth = 100f;
     private bool statsSaved = false;
     private CheckPoint _checkpoint = null;
 
-    private void Start()
+    private void Awake()
     {
         _maxHealth = _health;
+        _healthSlider.maxValue = _maxHealth;
+        _healthSlider.value = _health;
     }
 
     private void Update()
@@ -53,6 +57,8 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _health -= damage;
+
+        _healthSlider.value = _health;
 
         if(_health <= 0f)
         {
