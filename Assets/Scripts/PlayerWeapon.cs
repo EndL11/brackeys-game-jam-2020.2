@@ -9,7 +9,7 @@ public class PlayerWeapon : MonoBehaviour
     public Transform weaponPoint;
 
     private float fireRate = 3f;
-    private float fireTime;
+    private float fireTime = 0f;
 
     void Start()
     {
